@@ -1,0 +1,382 @@
+@import '_variables.scss';
+@import '_mixins';
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background: rgba(255, 211, 167, 0.663) !important;
+}
+
+::-webkit-scrollbar-thumb{
+    background:$color-light-yellow;
+    border: 1px solid #e8e2b5;
+    border-radius: 1px;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    padding-left: 0px !important;
+}
+
+.landingImg {
+    position: absolute;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+}
+
+.landing-section {
+    height: 100vh;
+
+    .title {
+        font-family: 'Philosopher', sans-serif;
+        font-size: 57px;
+        font-weight: $font-semi-bold;
+        color: $color-light-yellow;
+        transition: 2s ease-in-out;
+    }
+
+    .para {
+        font-size: $medium-font-size;
+        font-weight: 400;
+        color: $color-white;
+        margin-bottom: 100px;
+        font-family: 'Arsenal', sans-serif;
+    }
+
+    .animate-intro {
+        transition: all 3s;
+        transform: translateY(50px);
+    }
+
+    .shopBtn {
+        @include btn-design($btn-bg-color);
+        opacity: 0;
+        transition: all 2s;
+    }
+}
+
+//***********navbar*************//
+nav {
+    width: 100%;
+    position: absolute !important;
+}
+
+.navbar-nav {
+    width: 100%;
+
+    .nav-item {
+        margin: 0px 30px;
+        font-size: 20px;
+        font-weight: 500;
+
+        .nav-link {
+            font-family: 'Philosopher', sans-serif;
+            color: darken($color-dark-pine, 10%);
+
+            &:after {
+                display: block;
+                content: '';
+                width: 0;
+                height: 2px;
+                background: #374746d6;
+                transition: width .3s;
+            }
+
+            &:hover {
+                color: $color-dark-pine;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/**************about us section*************/
+.about-us-section {
+    background: $bg-primary;
+
+    .about-us-sub-title {
+        font-family: 'Philosopher', sans-serif;
+        margin-bottom: 50px;
+        color: $color-darker-green;
+    }
+
+    .about-us-para {
+        text-align: justify;
+        font-size: 22px;
+        color: $color-dark-green;
+        font-family: 'Arsenal', sans-serif;
+    }
+
+    .about-us-vid {
+        padding-top: 5px;
+        text-align: center;
+        //background: rgb(194, 145, 145);
+    }
+}
+
+.products-section {
+    padding-bottom: 50px;
+    background: $bg-primary;
+
+    .card {
+        width: 350px;
+        border: none !important;
+        overflow: hidden;
+
+        .card-img-top {
+            height: 350px;
+            transition: all .5s;
+
+            &:hover {
+                transform: scale(1.1);
+                transition: all .5s;
+            }
+        }
+
+        .card-body {
+            background: $bg-primary;
+        }
+
+        .card-title {
+            font-family: 'Philosopher', sans-serif;
+            color: #4a4b46e4;
+        }
+
+        .card-text {
+            font-family: 'Arsenal', sans-serif;
+            color: $color-dark-green;
+        }
+    }
+}
+
+.eco-freindly-section {
+    width: 100.9%;
+    height: 100vh;
+
+    .eco-freindly-img {
+        opacity: 0.6;
+        height: 100vh;
+        z-index: -1;
+        object-fit: cover;
+    }
+
+    h1 {
+        font-family: 'Philosopher', sans-serif;
+        color: $color-darker-green;
+        opacity: 0.9;
+    }
+
+    .eco-freindly-container {
+        position: relative;
+        top: -550px;
+        background: #fcf9d274;
+    }
+
+    p {
+        font-size: $small-font-size;
+        width: 1000px;
+        margin-top: 50px;
+        color: $color-darker-green;
+        font-family: 'Arsenal', sans-serif;
+    }
+}
+
+//**********contact us section**********//
+.contact-us-section {
+    width: 100.9%;
+    background: $bg-primary;
+    height: 700px;
+    height: 100vh;
+
+    form input {
+        @include input-design(80%, $bg-primary , 40px);
+    }
+
+    form textarea {
+        @include input-design(90%, $bg-primary , 50px);
+    }
+
+    .contact-us-sub-title {
+        font-family: 'Philosopher', sans-serif;
+        color: $color-darker-green;
+        margin-bottom: 50px;
+    }
+
+    .contactBtn {
+        @include btn-design($color-dark-pine);
+    }
+}
+
+//**********testimony part*************/
+.testimony-section {
+    width: 100.9%;
+    background: $bg-primary;
+    height: 150px;
+
+    .testimony {
+        background: $color-creamy-white;
+        width: 350px !important;
+        height: 400px;
+        padding: 120px 40px;
+        border-radius: 5px;
+        font-family: 'Arsenal', sans-serif;
+
+        .testimony-image {
+            border-radius: 100px;
+            position: absolute;
+            transform: translatex(-50%);
+            top: -70px;
+        }
+
+        .name {
+            color: #3b4545a9;
+            font-weight: 400;
+        }
+
+        p {
+            color: $color-darker-green;
+            font-size: $smaller-font-size;
+            margin-top: 30px;
+        }
+    }
+}
+
+.temp {
+    height: 400px;
+    background: $color-light-cream;
+}
+
+//**********footer***********//
+footer {
+    background: $color-light-cream;
+
+    .footer-sub-title {
+        margin-bottom: 30px;
+        color: $color-dark-pine;
+        font-size: $medium-font-size;
+        font-family: 'Orienta', sans-serif;
+    }
+
+    .footer-para {
+        font-family: 'Arsenal', sans-serif;
+        width: 600px;
+        font-size: $smaller-font-size;
+        color: rgba(59, 58, 58, 0.853);
+    }
+
+    .quick-links {
+        border-style: none;
+        margin-bottom: 15px;
+
+        a {
+            font-family: 'Arsenal', sans-serif;
+            text-decoration: none;
+            font-size: $smaller-font-size;
+            color: rgba(59, 58, 58, 0.853);
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .contact-icon {
+        font-size: $smaller-font-size;
+        width: 30px;
+        padding-left: 5px;
+        padding-top: 5px;
+        margin-right: 10px;
+        color: #2d2c2ce8;
+    }
+
+    .contact-us-part p {
+        font-family: 'Arsenal', sans-serif;
+        font-size: $smaller-font-size;
+        color: rgba(59, 58, 58, 0.944);
+    }
+
+    .mb-15 {
+        margin-bottom: 15px !important;
+    }
+
+    .social-media-icons {
+        font-size: 25px;
+        width: 40px;
+        border-radius: 50px;
+        border: 1px solid $color-white;
+        cursor: pointer;
+
+        i {
+            transition: all .3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .fa-facebook-square {
+            color: #3b5998;
+        }
+
+        .fa-instagram {
+            background: #d6249f;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .fa-pinterest {
+            color: #cb2027
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .subscribe-input {
+        @include input-design(200px, $color-creamy-white, auto);
+        border: 1px solid #46363352 !important;
+        border-radius: 3px !important;
+        border-right: none !important;
+    }
+
+    .subscribe-btn {
+        @include btn-design($btn-bg-color);
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+
+        &:before {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+        &:after {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+    }
+}
